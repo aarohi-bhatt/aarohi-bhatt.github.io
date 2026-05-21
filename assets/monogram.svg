@@ -1,9 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-labelledby="title desc">
   <title id="title">Aarohi Bhatt monogram</title>
-  <desc id="desc">A circular AB monogram for Aarohi Bhatt.</desc>
-  <rect width="240" height="240" rx="32" fill="#1f6f64"/>
-  <circle cx="178" cy="64" r="24" fill="#f6f2eb"/>
-  <path d="M54 178 102 54h28l48 124h-31l-9-27H94l-9 27H54Zm50-55h25l-12-38-13 38Z" fill="#f6f2eb"/>
-  <path d="M139 178V79h43c20 0 34 12 34 29 0 10-5 19-14 24 12 4 19 13 19 27 0 18-15 19-37 19h-45Zm28-59h12c7 0 11-4 11-10s-4-10-11-10h-12v20Zm0 38h16c8 0 12-4 12-11s-4-11-12-11h-16v22Z" fill="#f6f2eb"/>
-  <path d="M31 207h178" stroke="#a54e3a" stroke-width="10" stroke-linecap="round"/>
+  <desc id="desc">An AB monogram for Aarohi Bhatt in deep green and warm clay.</desc>
+  <defs>
+    <linearGradient id="bg" x1="24" x2="218" y1="14" y2="226" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#174f45"/>
+      <stop offset="1" stop-color="#0f3731"/>
+    </linearGradient>
+  </defs>
+  <rect width="240" height="240" rx="28" fill="url(#bg)"/>
+  <path d="M42 194 100 48h31l58 146h-34l-11-31H88l-11 31H42Zm56-59h36l-18-51-18 51Z" fill="#fffaf2"/>
+  <path d="M140 194V72h49c22 0 38 14 38 34 0 12-6 22-17 28 14 5 22 16 22 32 0 18-14 28-39 28h-53Zm28-73h16c9 0 14-5 14-13 0-7-5-12-14-12h-16v25Zm0 49h21c10 0 15-5 15-14 0-8-5-13-15-13h-21v27Z" fill="#fffaf2"/>
+  <path d="M34 206h172" stroke="#a4563f" stroke-width="9" stroke-linecap="round"/>
+  <path d="M34 34h60" stroke="#bb8a37" stroke-width="7" stroke-linecap="round"/>
 </svg>

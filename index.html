@@ -5,79 +5,416 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta
       name="description"
-      content="Personal website for Aarohi Bhatt."
+      content="Aarohi Bhatt is an MBBS-trained physician and emerging CS/ML researcher building toward trustworthy, multimodal AI for medicine."
     >
-    <title>Aarohi Bhatt</title>
+    <meta name="author" content="Aarohi Bhatt">
+    <meta
+      name="keywords"
+      content="Aarohi Bhatt, medical AI, radiology research, machine learning, multimodal AI, medical imaging, Columbia Engineering, CS@CU"
+    >
+    <meta property="og:title" content="Aarohi Bhatt">
+    <meta
+      property="og:description"
+      content="Physician-researcher building toward trustworthy, multimodal AI for medicine."
+    >
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aarohi-bhatt.github.io/">
+    <meta property="og:image" content="https://aarohi-bhatt.github.io/assets/monogram.svg">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Aarohi Bhatt">
+    <meta
+      name="twitter:description"
+      content="Physician-researcher building toward trustworthy, multimodal AI for medicine."
+    >
+    <title>Aarohi Bhatt | Physician-Researcher &amp; Emerging CS/ML Researcher</title>
+    <link rel="canonical" href="https://aarohi-bhatt.github.io/">
+    <link rel="icon" href="assets/monogram.svg" type="image/svg+xml">
     <link rel="stylesheet" href="styles.css">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Aarohi Bhatt",
+        "url": "https://aarohi-bhatt.github.io/",
+        "email": "mailto:abhatt97@uw.edu",
+        "jobTitle": "Physician-researcher",
+        "sameAs": ["https://github.com/aarohi-bhatt"],
+        "affiliation": [
+          {
+            "@type": "Organization",
+            "name": "University of Washington"
+          },
+          {
+            "@type": "CollegeOrUniversity",
+            "name": "Columbia Engineering"
+          }
+        ],
+        "knowsAbout": [
+          "medical imaging",
+          "machine learning",
+          "multimodal AI",
+          "radiology research",
+          "clinical decision-making"
+        ]
+      }
+    </script>
   </head>
   <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
     <header class="site-header">
       <a class="brand" href="#top" aria-label="Aarohi Bhatt home">
-        <img src="assets/monogram.svg" alt="" width="44" height="44">
+        <img src="assets/monogram.svg" alt="" width="42" height="42">
         <span>Aarohi Bhatt</span>
       </a>
       <nav aria-label="Primary navigation">
         <a href="#about">About</a>
-        <a href="#work">Work</a>
+        <a href="#north-star">North Star</a>
+        <a href="#research">Research</a>
+        <a href="#projects">Projects</a>
+        <a href="#trajectory">Trajectory</a>
         <a href="#contact">Contact</a>
       </nav>
     </header>
 
-    <main id="top">
-      <section class="hero" aria-labelledby="page-title">
+    <main id="main">
+      <!-- Personal content: Hero -->
+      <section id="top" class="hero" aria-labelledby="page-title">
         <div class="hero-copy">
-          <p class="eyebrow">Personal Webpage</p>
+          <p class="eyebrow">Medicine to machine learning</p>
           <h1 id="page-title">Aarohi Bhatt</h1>
-          <p class="lede">
-            A concise home for projects, writing, and ways to get in touch.
+          <p class="tagline">
+            Physician-researcher building toward trustworthy, multimodal AI for
+            medicine.
           </p>
-          <div class="actions" aria-label="Primary links">
-            <a class="button primary" href="https://github.com/aarohi-bhatt">GitHub</a>
+          <p class="intro">
+            I&rsquo;m an MBBS-trained physician and former radiology
+            postdoctoral scholar now beginning Columbia&rsquo;s CS@CU MS Bridge
+            / MSCS pathway. My work sits at the intersection of medical
+            imaging, clinical data, body composition biomarkers, multimodal AI,
+            and robust methods for healthcare decision-making.
+          </p>
+          <div class="actions" aria-label="Primary page links">
+            <a class="button primary" href="#research">View Research</a>
+            <a class="button" href="#cv">View CV</a>
             <a class="button" href="#contact">Contact</a>
           </div>
         </div>
-        <div class="portrait-panel" aria-hidden="true">
-          <img src="assets/monogram.svg" alt="" width="240" height="240">
+
+        <aside class="hero-card" aria-label="Current academic direction">
+          <img src="assets/monogram.svg" alt="" width="86" height="86">
+          <p class="card-kicker">Current direction</p>
+          <p>
+            Columbia Engineering CS@CU MS Bridge / MSCS pathway, beginning
+            May 26, 2026. Expected graduation: Spring 2028.
+          </p>
+          <p>
+            Building toward thesis-driven ML research and a future PhD path in
+            computer science / machine learning.
+          </p>
+        </aside>
+      </section>
+
+      <!-- Personal content: About -->
+      <section id="about" class="section narrative-section" aria-labelledby="about-title">
+        <div class="section-heading">
+          <p class="section-label">About</p>
+          <h2 id="about-title">A clinical beginning, now turning toward rigorous ML.</h2>
+        </div>
+        <div class="narrative">
+          <p>
+            I began in clinical medicine, trained as a physician, and moved into
+            radiology research, where I worked on CT-derived imaging biomarkers,
+            body composition analysis, pancreatic disease, liver cancer, GI
+            bleeding CTA, and outcomes-focused clinical imaging studies.
+          </p>
+          <p>
+            From November 2024 to May 2026, I was a Postdoctoral Scholar in
+            Radiology at the University of Washington, Seattle. I am now
+            beginning Columbia Engineering&rsquo;s CS@CU MS Bridge / MSCS
+            pathway, where I plan to build a rigorous foundation in computer
+            science and machine learning.
+          </p>
+          <p>
+            I am especially interested in thesis-driven research that connects
+            robust ML methods with clinically meaningful AI systems: models that
+            can reason across imaging, text, structured clinical data, and
+            longitudinal patient trajectories.
+          </p>
         </div>
       </section>
 
-      <section id="about" class="section">
-        <p class="section-label">About</p>
-        <h2>Build this page around the work you want people to find first.</h2>
+      <!-- Personal content: Current North Star -->
+      <section
+        id="north-star"
+        class="section north-star"
+        aria-labelledby="north-star-title"
+      >
+        <p class="section-label">Current North Star</p>
+        <h2 id="north-star-title">Toward diagnostic intelligence that deserves clinical trust.</h2>
         <p>
-          Replace this text with a short introduction, your current focus, and
-          the kinds of projects or opportunities you want this page to support.
+          I am building toward a thesis-focused master&rsquo;s and, likely, a
+          PhD path at the intersection of rigorous machine learning research and
+          clinically meaningful AI. My long-term goal is to contribute to
+          systems that can reason across medical images, language, structured
+          clinical data, and longitudinal patient trajectories &mdash; not just
+          as tools for automation, but as foundations for better diagnostic
+          intelligence.
         </p>
       </section>
 
-      <section id="work" class="section">
-        <p class="section-label">Work</p>
-        <div class="work-grid">
-          <article class="project-card">
-            <p>Featured Project</p>
-            <h2>Project Title</h2>
-            <p>Add a short description and link to the repository, demo, or write-up.</p>
+      <!-- Personal content: Research interests -->
+      <section id="research" class="section" aria-labelledby="research-title">
+        <div class="section-heading wide">
+          <p class="section-label">Research Interests</p>
+          <h2 id="research-title">Questions I keep returning to.</h2>
+          <p>
+            The methods matter, but so does the clinical surface they meet: the
+            messiness of real data, the cost of uncertainty, and the need for
+            systems that make reasoning more faithful rather than merely faster.
+          </p>
+        </div>
+
+        <div class="interest-grid">
+          <article class="interest-card">
+            <h3>Multimodal medical AI</h3>
+            <p>Models that connect imaging, text, structured data, pathology, and outcomes.</p>
           </article>
-          <article class="project-card">
-            <p>Writing</p>
-            <h2>Recent Post</h2>
-            <p>Use this space for a blog post, case study, research note, or update.</p>
+          <article class="interest-card">
+            <h3>Computer vision for radiology</h3>
+            <p>Image representations that stay close to anatomy, disease, and clinical use.</p>
           </article>
-          <article class="project-card">
-            <p>Now</p>
-            <h2>Current Focus</h2>
-            <p>Share what you are learning, building, studying, or exploring next.</p>
+          <article class="interest-card">
+            <h3>Robust and uncertainty-aware ML</h3>
+            <p>Methods that know when to be cautious and how to expose uncertainty.</p>
+          </article>
+          <article class="interest-card">
+            <h3>Causality and missingness</h3>
+            <p>Clinical datasets are incomplete by design; inference must respect that.</p>
+          </article>
+          <article class="interest-card">
+            <h3>Imaging biomarkers and body composition</h3>
+            <p>CT-derived measurements of muscle, adipose tissue, frailty, and risk.</p>
+          </article>
+          <article class="interest-card">
+            <h3>Clinical reasoning with imaging + text</h3>
+            <p>Learning from reports, images, and the interpretive logic that connects them.</p>
+          </article>
+          <article class="interest-card">
+            <h3>Longitudinal outcomes modeling</h3>
+            <p>Patient trajectories, response over time, and clinically meaningful endpoints.</p>
+          </article>
+          <article class="interest-card">
+            <h3>Human-centered diagnostic AI</h3>
+            <p>Systems built around clinicians, patients, ambiguity, and accountable care.</p>
           </article>
         </div>
       </section>
 
-      <section id="contact" class="section contact-section">
-        <p class="section-label">Contact</p>
-        <h2>Find me online.</h2>
-        <div class="contact-links">
-          <a href="https://github.com/aarohi-bhatt">GitHub</a>
-          <a href="mailto:hello@example.com">Email</a>
-          <a href="https://www.linkedin.com/">LinkedIn</a>
+      <!-- Personal content: Selected projects -->
+      <section id="projects" class="section" aria-labelledby="projects-title">
+        <div class="section-heading wide">
+          <p class="section-label">Selected Projects</p>
+          <h2 id="projects-title">Clinical problems as a proving ground for better methods.</h2>
+        </div>
+
+        <div class="project-grid">
+          <article class="project-card">
+            <p class="project-letter">A</p>
+            <h3>CT Body Composition &amp; Surgical Outcomes</h3>
+            <p>
+              CT-based skeletal muscle and adipose tissue analysis using
+              segmentation tools to study frailty, surgical risk, and
+              longitudinal outcomes in abdominal surgery and pancreatic disease.
+            </p>
+          </article>
+          <article class="project-card">
+            <p class="project-letter">B</p>
+            <h3>HCC / Y90 / Liver Transplant Imaging Biomarkers</h3>
+            <p>
+              Analysis of patients undergoing Y90 treatment and liver
+              transplant, including lesion response, downsizing, MELD score
+              changes, longitudinal CT scans, and long-term outcomes.
+            </p>
+          </article>
+          <article class="project-card">
+            <p class="project-letter">C</p>
+            <h3>GI Bleed CTA Reader Study</h3>
+            <p>
+              Reader-study and outcomes analysis of CTA for gastrointestinal
+              bleeding, including active extravasation, non-active
+              extravasation, dual-energy iodine maps, diagnostic confidence,
+              and inter-reader agreement.
+            </p>
+          </article>
+          <article class="project-card">
+            <p class="project-letter">D</p>
+            <h3>Multimodal Clinical AI Direction</h3>
+            <p>
+              Future-facing work focused on models that combine imaging,
+              reports, clinical variables, pathology, and longitudinal outcomes
+              to support diagnostic reasoning and patient-specific
+              decision-making.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Personal content: Education and trajectory -->
+      <section id="trajectory" class="section" aria-labelledby="trajectory-title">
+        <div class="section-heading wide">
+          <p class="section-label">Education / Trajectory</p>
+          <h2 id="trajectory-title">Medicine, radiology research, computer science, then deeper inquiry.</h2>
+        </div>
+
+        <ol class="timeline">
+          <li>
+            <span class="timeline-marker" aria-hidden="true"></span>
+            <div>
+              <p class="timeline-date">Clinical medical training</p>
+              <h3>MBBS, India</h3>
+              <p>Foundational training in medicine, patient care, and clinical reasoning.</p>
+            </div>
+          </li>
+          <li>
+            <span class="timeline-marker" aria-hidden="true"></span>
+            <div>
+              <p class="timeline-date">November 2024 - May 2026</p>
+              <h3>Postdoctoral Scholar, Radiology, University of Washington, Seattle</h3>
+              <p>
+                Imaging biomarkers, CT body composition, pancreatic and liver
+                disease, GI bleeding CTA, and outcomes-focused radiology research.
+              </p>
+            </div>
+          </li>
+          <li>
+            <span class="timeline-marker" aria-hidden="true"></span>
+            <div>
+              <p class="timeline-date">Begins May 26, 2026; expected Spring 2028</p>
+              <h3>Columbia Engineering CS@CU MS Bridge / MSCS pathway</h3>
+              <p>
+                Building a rigorous foundation in computer science, machine
+                learning, systems, and mathematical thinking.
+              </p>
+            </div>
+          </li>
+          <li>
+            <span class="timeline-marker" aria-hidden="true"></span>
+            <div>
+              <p class="timeline-date">Thesis-focused master&rsquo;s direction</p>
+              <h3>Rigorous ML research and PhD preparation</h3>
+              <p>
+                Moving from clinically grounded questions toward methodologically
+                serious research in trustworthy medical AI.
+              </p>
+            </div>
+          </li>
+          <li>
+            <span class="timeline-marker" aria-hidden="true"></span>
+            <div>
+              <p class="timeline-date">Future direction</p>
+              <h3>ML PhD / research scientist / healthcare AI builder</h3>
+              <p>
+                Contributing to labs and teams building diagnostic intelligence
+                that is technically strong and clinically accountable.
+              </p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <!-- Personal content: Skills -->
+      <section id="skills" class="section" aria-labelledby="skills-title">
+        <div class="section-heading wide">
+          <p class="section-label">Skills</p>
+          <h2 id="skills-title">A bridge between clinical fluency and technical depth.</h2>
+        </div>
+
+        <div class="skill-groups">
+          <article class="skill-group">
+            <h3>Clinical / Research</h3>
+            <ul>
+              <li>Radiology research</li>
+              <li>Clinical data abstraction</li>
+              <li>Outcomes studies</li>
+              <li>Study design</li>
+              <li>Manuscript and abstract preparation</li>
+              <li>Multidisciplinary collaboration</li>
+            </ul>
+          </article>
+          <article class="skill-group">
+            <h3>Data / ML</h3>
+            <ul>
+              <li>Python</li>
+              <li>PyTorch</li>
+              <li>OpenCV</li>
+              <li>Medical image analysis</li>
+              <li>Segmentation workflows</li>
+              <li>Statistical modeling</li>
+              <li>Longitudinal clinical datasets</li>
+            </ul>
+          </article>
+          <article class="skill-group">
+            <h3>Themes</h3>
+            <ul>
+              <li>Medical AI</li>
+              <li>Computer vision</li>
+              <li>Multimodal learning</li>
+              <li>Interpretability</li>
+              <li>Causality</li>
+              <li>Robustness</li>
+              <li>Translational research</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <!-- Personal content: Values -->
+      <section id="values" class="section" aria-labelledby="values-title">
+        <div class="section-heading wide">
+          <p class="section-label">Values</p>
+          <h2 id="values-title">The kind of AI worth building.</h2>
+        </div>
+
+        <div class="value-grid">
+          <article class="value-card">
+            <h3>Clinical grounding</h3>
+            <p>AI should solve real clinical problems, not just optimize benchmarks.</p>
+          </article>
+          <article class="value-card">
+            <h3>Scientific rigor</h3>
+            <p>Methods should be robust, interpretable, and honest about uncertainty.</p>
+          </article>
+          <article class="value-card">
+            <h3>Transformative ambition</h3>
+            <p>
+              The goal is not incremental automation, but better diagnostic
+              reasoning and patient care.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Personal content: Contact -->
+      <section id="contact" class="section contact-section" aria-labelledby="contact-title">
+        <div class="contact-panel">
+          <div>
+            <p class="section-label">Contact</p>
+            <h2 id="contact-title">For research conversations, collaborations, and thoughtful bets.</h2>
+            <p>
+              I&rsquo;m especially interested in conversations around
+              multimodal medical AI, robust ML, clinical imaging datasets, and
+              PhD-oriented research paths.
+            </p>
+          </div>
+
+          <div class="contact-list" aria-label="Contact links">
+            <a href="mailto:abhatt97@uw.edu">abhatt97@uw.edu</a>
+            <a href="https://github.com/aarohi-bhatt">GitHub</a>
+            <span>LinkedIn: profile link coming soon</span>
+            <span>Google Scholar: profile link coming soon</span>
+            <span id="cv">CV download: PDF coming soon</span>
+          </div>
         </div>
       </section>
     </main>
