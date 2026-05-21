@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-labelledby="title desc">
+  <title id="title">Aarohi Bhatt monogram</title>
+  <desc id="desc">A circular AB monogram for Aarohi Bhatt.</desc>
+  <rect width="240" height="240" rx="32" fill="#1f6f64"/>
+  <circle cx="178" cy="64" r="24" fill="#f6f2eb"/>
+  <path d="M54 178 102 54h28l48 124h-31l-9-27H94l-9 27H54Zm50-55h25l-12-38-13 38Z" fill="#f6f2eb"/>
+  <path d="M139 178V79h43c20 0 34 12 34 29 0 10-5 19-14 24 12 4 19 13 19 27 0 18-15 19-37 19h-45Zm28-59h12c7 0 11-4 11-10s-4-10-11-10h-12v20Zm0 38h16c8 0 12-4 12-11s-4-11-12-11h-16v22Z" fill="#f6f2eb"/>
+  <path d="M31 207h178" stroke="#a54e3a" stroke-width="10" stroke-linecap="round"/>
+</svg>
