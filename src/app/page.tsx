@@ -4,8 +4,6 @@ import { PublicationEntry } from "@/components/publication-entry";
 import { publicationData } from "@/data/publication";
 import { ProfileSection } from "@/components/profile-section";
 import { aboutMe } from "@/data/aboutme";
-import { NewsEntry } from "@/components/news-entry";
-import { newsData } from "@/data/news";
 import { ExperienceEntry } from "@/components/experience-entry";
 import { experienceData } from "@/data/experience";
 import { portfolioData } from "@/data/portfolio";
@@ -40,7 +38,7 @@ export default function Home() {
                     <h2 className="font-serif text-base mb-3 tracking-wide uppercase">
                       Research Interests
                     </h2>
-                    <ul className="list-disc pl-5 space-y-2 text-sm leading-relaxed text-zinc-700">
+                    <ul className="font-serif list-disc pl-5 space-y-2 text-sm leading-relaxed text-zinc-700">
                       {portfolioData.map((interest) => (
                         <li key={interest.title}>
                           <span className="text-zinc-900">
@@ -59,23 +57,6 @@ export default function Home() {
             {sectionOrder.map((sectionName) => {
               // Most of this is redundant... but in case it needs to be unique.
               switch (sectionName) {
-                case Section.News:
-                  return (
-                    newsData.length > 0 && (
-                      <section key={sectionName}>
-                        <h2 className="font-serif text-l mb-6 tracking-wide uppercase">
-                          News
-                        </h2>
-                        <div className="space-y-7">
-                          {newsData.map((news, index) => (
-                            <div key={index}>
-                              <NewsEntry news={news} />
-                            </div>
-                          ))}
-                        </div>
-                      </section>
-                    )
-                  );
                 case Section.Education:
                   return (
                     educationData.length > 0 && (
