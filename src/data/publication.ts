@@ -13,15 +13,6 @@ export interface Publication {
 
 export const publicationData: Publication[] = [
   {
-    year: "2025",
-    conference: "International Journal of Cardiovascular Imaging",
-    title:
-      "Beyond hypertrophic cardiomyopathy: unmasking alternative causes of LVOT obstruction on CMR",
-    authors: "Banerjee T, Gulhane A, Bhatt A, Cham M",
-    paperUrl: "https://doi.org/10.1007/s10554-024-03311-8",
-    tldr: "Peer-reviewed journal article.",
-  },
-  {
     year: "2026",
     conference: "SIR Annual Scientific Meeting",
     title:
@@ -37,6 +28,15 @@ export const publicationData: Publication[] = [
     authors: "Kumar T, Yadav M, Bhatt A*, Patnam N, Bhargava R",
     award: "Certificate of Merit, Cum Laude",
     tldr: "Educational exhibit.",
+  },
+  {
+    year: "2025",
+    conference: "International Journal of Cardiovascular Imaging",
+    title:
+      "Beyond hypertrophic cardiomyopathy: unmasking alternative causes of LVOT obstruction on CMR",
+    authors: "Banerjee T, Gulhane A, Bhatt A, Cham M",
+    paperUrl: "https://doi.org/10.1007/s10554-024-03311-8",
+    tldr: "Peer-reviewed journal article.",
   },
   {
     year: "2025",

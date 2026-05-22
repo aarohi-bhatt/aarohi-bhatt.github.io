@@ -11,7 +11,7 @@ export const educationData: Education[] = [
   {
     year: "2026-2028",
     institution: "Columbia University, Fu Foundation School of Engineering and Applied Science",
-    degree: "CS@CU MS Bridge / MSCS pathway",
+    degree: "MSCS Bridge @ Columbia University",
     thesis: "Thesis-oriented preparation in computer science and machine learning",
   },
   {

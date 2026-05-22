@@ -8,7 +8,7 @@ export interface News {
 export const newsData: News[] = [
   {
     date: "May 2026",
-    title: "Beginning Columbia Engineering's CS@CU MS Bridge / MSCS pathway",
+    title: "Beginning the MSCS Bridge @ Columbia University",
     description:
       "Building a rigorous computer science and machine learning foundation for future thesis-driven research.",
   },

@@ -18,7 +18,7 @@ export function ProfileSection({ aboutMe }: ProfileSectionProps) {
   }
 
   return (
-    <div className="md:sticky top-12 flex flex-row-reverse md:flex-col gap-4 md:space-y-8">
+    <div className="md:sticky top-10 flex flex-row-reverse md:flex-col gap-4 md:space-y-6">
       {aboutMe.imageUrl && (
         <div className="w-1/3 md:w-full flex-shrink-0">
           <div className="relative max-h-[45vh] md:w-[65%] aspect-[3/4]">
@@ -41,7 +41,7 @@ export function ProfileSection({ aboutMe }: ProfileSectionProps) {
             {aboutMe.altName}
           </p>
         )}
-        <p className="text-zinc-600 text-xs leading-relaxed tracking-wide uppercase mb-6">
+        <p className="text-zinc-600 text-xs leading-relaxed tracking-wide uppercase mb-4">
           {aboutMe.title}
           <br />
           {aboutMe.institutionUrl ? (
@@ -57,7 +57,7 @@ export function ProfileSection({ aboutMe }: ProfileSectionProps) {
             aboutMe.institution
           )}
         </p>
-        <div className="flex gap-6 mb-6">
+        <div className="flex gap-6 mb-4">
           {aboutMe.blogUrl && (
             <a
               href={aboutMe.blogUrl}
@@ -90,7 +90,6 @@ export function ProfileSection({ aboutMe }: ProfileSectionProps) {
         <div className="space-y-2">
           {aboutMe.googleScholarUrl && (
             <>
-              <br />
               <a
                 href={aboutMe.googleScholarUrl}
                 className="inline-flex items-center gap-2 text-sm text-zinc-600 hover:text-zinc-900 transition-colors"
@@ -104,7 +103,6 @@ export function ProfileSection({ aboutMe }: ProfileSectionProps) {
           )}
           {aboutMe.twitterUsername && (
             <>
-              <br />
               <a
                 href={`https://twitter.com/${aboutMe.twitterUsername}`}
                 className="inline-flex items-center gap-2 text-sm text-zinc-600 hover:text-zinc-900 transition-colors"
@@ -117,7 +115,6 @@ export function ProfileSection({ aboutMe }: ProfileSectionProps) {
           )}
           {aboutMe.githubUsername && (
             <>
-              <br />
               <a
                 href={`https://github.com/${aboutMe.githubUsername}`}
                 className="inline-flex items-center gap-2 text-sm text-zinc-600 hover:text-zinc-900 transition-colors"
@@ -131,7 +128,6 @@ export function ProfileSection({ aboutMe }: ProfileSectionProps) {
           )}
           {aboutMe.linkedinUsername && (
             <>
-              <br />
               <a
                 href={`https://www.linkedin.com/in/${aboutMe.linkedinUsername}`}
                 className="inline-flex items-center gap-2 text-sm text-zinc-600 hover:text-zinc-900 transition-colors"
