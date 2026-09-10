@@ -5,6 +5,7 @@ import {
   Twitter,
   ArrowUpRight,
   GraduationCap,
+  Mail,
 } from "lucide-react";
 import { AboutMe } from "@/data/aboutme";
 
@@ -138,6 +139,12 @@ export function ProfileSection({ aboutMe }: ProfileSectionProps) {
                 linkedin.com/in/{aboutMe.linkedinUsername}
               </a>
             </>
+          )}
+          {aboutMe.email && (
+            <p className="inline-flex items-center gap-2 text-sm text-zinc-600">
+              <Mail size={14} />
+              {aboutMe.email}
+            </p>
           )}
         </div>
       </div>
