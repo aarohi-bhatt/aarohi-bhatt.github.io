@@ -30,6 +30,11 @@ export function EducationEntry({ education }: { education: Education }) {
               )}
             </p>
           )}
+          {education.coursework && (
+            <p className="text-sm text-zinc-500 mt-2 italic">
+              Coursework: {education.coursework}
+            </p>
+          )}
         </div>
       </div>
     </div>
