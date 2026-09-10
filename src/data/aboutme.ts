@@ -22,10 +22,12 @@ export const aboutMe: AboutMe = {
   title: "MBBS-trained physician",
   institution: "MSCS Bridge @ Columbia University",
   description:
-    "I am an MBBS-trained physician from India and a former Postdoctoral Scholar in Radiology at the University of Washington. I am now beginning the MSCS Bridge @ Columbia University, building toward research in trustworthy multimodal AI for medicine.<br/><br/>My transition from medicine to computer science grew out of seeing how often clinical decisions depend on incomplete information, uneven documentation, and human vigilance. I want to build AI systems that function as reliable clinical safety nets: technically rigorous, interpretable, and designed for messy real-world care.",
-  email: "",
+    "I am an MBBS-trained physician from India and a former Postdoctoral Scholar in Radiology at the University of Washington. I am pursuing the MSCS Bridge @ Columbia University, building toward research in trustworthy multimodal AI for medicine.<br/><br/>My transition from medicine to computer science grew out of seeing how often clinical decisions depend on incomplete information, uneven documentation, and human vigilance. I want to build AI systems that function as reliable clinical safety nets: technically rigorous, interpretable, and designed for messy real-world care.",
+  email: "akb2248 [at] columbia [dot] edu",
   imageUrl: "/images/profile.jpg",
   githubUsername: "aarohi-bhatt",
+  twitterUsername: "aarohibhatt_",
+  linkedinUsername: "aarohi-bhatt",
   institutionUrl: "https://www.engineering.columbia.edu/",
   funDescription:
     "Interested in multimodal medical AI, human-centered diagnostic systems, and robust learning from incomplete clinical data.",
