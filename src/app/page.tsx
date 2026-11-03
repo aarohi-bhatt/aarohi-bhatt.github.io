@@ -8,6 +8,7 @@ import { ExperienceEntry } from "@/components/experience-entry";
 import { experienceData } from "@/data/experience";
 import { portfolioData } from "@/data/portfolio";
 import { sectionOrder, Section } from "@/data/section-order";
+import { artData } from "@/data/art";
 
 export default function Home() {
   return (
@@ -105,6 +106,46 @@ export default function Home() {
                               key={index}
                               experience={experience}
                             />
+                          ))}
+                        </div>
+                      </section>
+                    )
+                  );
+                case Section.Art:
+                  return (
+                    artData.length > 0 && (
+                      <section key={sectionName}>
+                        <div className="flex items-baseline justify-between mb-6">
+                          <h2 className="font-serif text-md tracking-wide uppercase">
+                            Art
+                          </h2>
+                          <a
+                            href="/art/"
+                            className="font-serif text-sm text-zinc-500 underline hover:text-zinc-900"
+                          >
+                            See all
+                          </a>
+                        </div>
+                        <p className="font-serif text-sm leading-relaxed text-zinc-700 mb-5">
+                          Things I make for the joy of it, starting with generative sketches in p5.js.
+                        </p>
+                        <div className="grid grid-cols-2 gap-5">
+                          {artData.map((piece) => (
+                            <a key={piece.title} href={piece.url} className="group block">
+                              {/* eslint-disable-next-line @next/next/no-img-element */}
+                              <img
+                                src={piece.imageUrl}
+                                alt={piece.title}
+                                loading="lazy"
+                                className="w-full aspect-square object-cover rounded-lg transition-transform duration-300 group-hover:scale-[1.02]"
+                              />
+                              <p className="font-serif text-sm text-zinc-900 mt-2 group-hover:underline">
+                                {piece.title}
+                              </p>
+                              <p className="font-serif text-xs leading-relaxed text-zinc-500 mt-1">
+                                {piece.description}
+                              </p>
+                            </a>
                           ))}
                         </div>
                       </section>
