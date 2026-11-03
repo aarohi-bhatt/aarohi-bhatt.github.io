@@ -29,6 +29,9 @@ const sectionHasContent: Record<Section, boolean> = {
 
 const navItems: NavItem[] = [
   ...(aboutMe.description ? [{ id: "about", label: "About" }] : []),
+  ...(aboutMe.description && portfolioData.length > 0
+    ? [{ id: "research-interests", label: "Research Interests" }]
+    : []),
   ...sectionOrder
     .filter((name) => sectionHasContent[name])
     .map((name) => ({ id: name, label: sectionLabels[name] })),
@@ -61,7 +64,10 @@ export default function Home() {
                   dangerouslySetInnerHTML={{ __html: aboutMe.description }}
                 />
                 {portfolioData.length > 0 && (
-                  <div className="mt-5">
+                  <div
+                    id="research-interests"
+                    className="mt-5 scroll-mt-16 md:scroll-mt-10"
+                  >
                     <h2 className="font-serif text-base mb-3 tracking-wide uppercase">
                       Research Interests
                     </h2>
