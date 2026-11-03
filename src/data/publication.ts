@@ -24,8 +24,9 @@ export const publicationData: Publication[] = [
     year: "2025",
     conference: "RSNA Annual Meeting",
     title:
-      "Mycotic aortic aneurysms: from early signs to rupture, an evolution over time",
+      "Acute Infectious Aortitis and Pseudoaneurysm from Early Signs to Rupture: Evolution over Time",
     authors: "Kumar T, Yadav M, Bhatt A*, Patnam N, Bhargava R",
+    paperUrl: "https://doi.org/10.1148/rg.260091",
     award: "Certificate of Merit, Cum Laude",
     tldr: "Educational exhibit.",
   },
