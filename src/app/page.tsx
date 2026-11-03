@@ -9,12 +9,37 @@ import { experienceData } from "@/data/experience";
 import { portfolioData } from "@/data/portfolio";
 import { sectionOrder, Section } from "@/data/section-order";
 import { artData } from "@/data/art";
+import { SectionNav, NavItem } from "@/components/section-nav";
+
+const sectionLabels: Record<Section, string> = {
+  [Section.Education]: "Education",
+  [Section.Publication]: "Publications",
+  [Section.Experience]: "Experience",
+  [Section.Art]: "Art",
+  [Section.Portfolio]: "Portfolio",
+};
+
+const sectionHasContent: Record<Section, boolean> = {
+  [Section.Education]: educationData.length > 0,
+  [Section.Publication]: publicationData.length > 0,
+  [Section.Experience]: experienceData.length > 0,
+  [Section.Art]: artData.length > 0,
+  [Section.Portfolio]: false,
+};
+
+const navItems: NavItem[] = [
+  ...(aboutMe.description ? [{ id: "about", label: "About" }] : []),
+  ...sectionOrder
+    .filter((name) => sectionHasContent[name])
+    .map((name) => ({ id: name, label: sectionLabels[name] })),
+];
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-[#FFFCF8]">
       {/* Don't have a great call on whether max-w-screen-xl is better */}
       <div className="max-w-screen-lg mx-auto px-8 py-14 md:py-18">
+        <SectionNav items={navItems} variant="bar" />
         {/* Grid Layout */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-2">
           {/* Left Column - Fixed Info */}
@@ -22,6 +47,7 @@ export default function Home() {
             {/* Profile */}
             <div className="md:sticky top-10 space-y-6">
               <ProfileSection aboutMe={aboutMe} />
+              <SectionNav items={navItems} variant="sidebar" />
             </div>
           </div>
 
@@ -29,7 +55,7 @@ export default function Home() {
           <div className="col-span-12 md:col-span-7 md:col-start-6 space-y-14">
             {/* About section is typically first */}
             {aboutMe.description && (
-              <section>
+              <section id="about" className="scroll-mt-16 md:scroll-mt-10">
                 <div
                   className="font-serif text-sm leading-relaxed text-zinc-700 space-y-4 [&_a]:underline [&_a]:text-zinc-900 [&_a:hover]:text-zinc-600"
                   dangerouslySetInnerHTML={{ __html: aboutMe.description }}
@@ -61,7 +87,7 @@ export default function Home() {
                 case Section.Education:
                   return (
                     educationData.length > 0 && (
-                      <section key={sectionName}>
+                      <section key={sectionName} id={sectionName} className="scroll-mt-16 md:scroll-mt-10">
                         <h2 className="font-serif text-zinc-700 mb-6 tracking-wide uppercase">
                           Education
                         </h2>
@@ -76,7 +102,7 @@ export default function Home() {
                 case Section.Publication:
                   return (
                     publicationData.length > 0 && (
-                      <section key={sectionName}>
+                      <section key={sectionName} id={sectionName} className="scroll-mt-16 md:scroll-mt-10">
                         <h2 className="font-serif text-l mb-6 tracking-wide uppercase">
                           Publications
                         </h2>
@@ -96,7 +122,7 @@ export default function Home() {
                 case Section.Experience:
                   return (
                     experienceData.length > 0 && (
-                      <section key={sectionName}>
+                      <section key={sectionName} id={sectionName} className="scroll-mt-16 md:scroll-mt-10">
                         <h2 className="font-serif text-md mb-6 tracking-wide uppercase">
                           Experience
                         </h2>
@@ -114,7 +140,7 @@ export default function Home() {
                 case Section.Art:
                   return (
                     artData.length > 0 && (
-                      <section key={sectionName}>
+                      <section key={sectionName} id={sectionName} className="scroll-mt-16 md:scroll-mt-10">
                         <div className="flex items-baseline justify-between mb-6">
                           <h2 className="font-serif text-md tracking-wide uppercase">
                             Art

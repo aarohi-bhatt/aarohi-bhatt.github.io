@@ -25,3 +25,10 @@ body {
 .sans {
   font-family: var(--font-geist-sans), system-ui, sans-serif;
 }
+
+/* Smooth jumps when using the section links */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
