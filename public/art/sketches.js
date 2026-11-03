@@ -63,7 +63,7 @@ SKETCHES.mirrors=(p,el)=>{
       const x0=a.x+(b.x-a.x)*u0,y0=a.y+(b.y-a.y)*u0,x1=a.x+(b.x-a.x)*u1,y1=a.y+(b.y-a.y)*u1;
       const k=i/6,c=p.lerpColor(p.color(LIGHT[Math.floor(k)%6]),p.color(LIGHT[(Math.floor(k)+1)%6]),k%1);
       c.setAlpha(150);buf.stroke(c);buf.strokeWeight(1.2);buf.line(x0,y0,x1,y1);}}
-  p.draw=()=>{const step=Math.max(total/1100,S*0.02);const prev=drawn;
+  p.draw=()=>{const step=Math.max(total/3600,S*0.006);const prev=drawn;
     if(!reduce)drawn=Math.min(total,drawn+step);
     strokeTo(reduce?0:prev,drawn);
     p.image(buf,0,0);
