@@ -21,14 +21,15 @@ export const publicationData: Publication[] = [
     tldr: "Oral presentation; *co-first.",
   },
   {
-    year: "2025",
-    conference: "RSNA Annual Meeting",
+    year: "2026",
+    conference: "RadioGraphics",
     title:
       "Acute Infectious Aortitis and Pseudoaneurysm from Early Signs to Rupture: Evolution over Time",
-    authors: "Kumar T, Yadav M, Bhatt A*, Patnam N, Bhargava R",
+    authors:
+      "Kumar T, Patnam NG, Karbhari A, Sitta J, Yadav M, Bhatt A, Kankara SR, Aswani Y, Bhargava R",
     paperUrl: "https://doi.org/10.1148/rg.260091",
     award: "Certificate of Merit, Cum Laude",
-    tldr: "Educational exhibit.",
+    tldr: "RadioGraphics Fundamentals, Vol. 46, No. 11. Originally an RSNA 2025 educational exhibit (Certificate of Merit, Cum Laude).",
   },
   {
     year: "2025",
