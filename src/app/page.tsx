@@ -117,17 +117,17 @@ export default function Home() {
                       <section key={sectionName}>
                         <div className="flex items-baseline justify-between mb-6">
                           <h2 className="font-serif text-md tracking-wide uppercase">
-                            Generative Art
+                            Art
                           </h2>
                           <a
                             href="/art/"
                             className="font-serif text-sm text-zinc-500 underline hover:text-zinc-900"
                           >
-                            Open the studio
+                            See all
                           </a>
                         </div>
                         <p className="font-serif text-sm leading-relaxed text-zinc-700 mb-5">
-                          Small sketches in p5.js, each grown from one geometric rule.
+                          Things I make for the joy of it, starting with generative sketches in p5.js.
                         </p>
                         <div className="grid grid-cols-2 gap-5">
                           {artData.map((piece) => (

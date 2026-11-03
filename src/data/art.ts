@@ -5,8 +5,8 @@ export interface ArtPiece {
   url: string;
 }
 
-// Generative sketches made with p5.js. Each one lives on the /art page;
-// add a piece by adding a section there and an entry here.
+// Art pieces shown on the homepage. Each links to its page under /art;
+// add a piece by adding it there and an entry here.
 export const artData: ArtPiece[] = [
   {
     title: "Hall of Mirrors",
