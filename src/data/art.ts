@@ -36,9 +36,9 @@ export const artData: ArtPiece[] = [
     id: "cubes",
     title: "Cube Field",
     description:
-      "Isometric cube stacks whose heights rise and settle with Perlin noise.",
+      "A landscape of isometric columns with slow waves rolling through it: teal valleys, saffron peaks.",
     details:
-      "Each cube is three rhombi in three tones. Stack heights come from slowly moving Perlin noise, and cubes are drawn back to front so nearer ones cover farther ones.",
+      "Heights come from Perlin noise that slowly slides across the grid, so hills and valleys travel toward you. Color follows height, and the faint lines on each column mark its stacked blocks.",
     imageUrl: "/art/thumbs/cubes.png",
     url: "/art/#cubes",
   },

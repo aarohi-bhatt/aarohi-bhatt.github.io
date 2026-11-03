@@ -107,22 +107,34 @@ SKETCHES.rangoli=(p,el)=>{
 
 /* 3. Cube Field */
 SKETCHES.cubes=(p,el)=>{
-  let t,z=0;
-  p.reseed=()=>{t=tok();p.noiseSeed(Math.floor(p.random(1e6)));if(reduce)p.redraw();};
+  // A landscape of isometric columns. Heights come from Perlin noise that
+  // drifts across the grid, so rolling waves travel through the terrain.
+  // Color follows height: valleys teal, middle ground green-gold, peaks saffron.
+  const N=12,MAXH=5,RAMP=['#2a7f8f','#2a9d8f','#8fb36a','#f0b33c','#f39a2b'];
+  let t,z=0,ox=0,oy=0;
+  p.reseed=()=>{t=tok();p.noiseSeed(Math.floor(p.random(1e6)));ox=p.random(100);oy=p.random(100);if(reduce)p.redraw();};
   p.setup=()=>{p.createCanvas(size(el),size(el));p.pixelDensity(2);p.reseed();if(reduce)p.noLoop();};
-  p.windowResized=()=>{p.resizeCanvas(size(el),size(el));};
-  function cube(x,y,s,top,left,right){const h=s/2;
-    p.fill(top);p.quad(x,y-h,x+s,y,x,y+h,x-s,y);
-    p.fill(left);p.quad(x-s,y,x,y+h,x,y+h+s,x-s,y+s);
-    p.fill(right);p.quad(x+s,y,x,y+h,x,y+h+s,x+s,y+s);}
-  p.draw=()=>{const S=p.width,N=7,s=S/(N*2.1);p.background(t.bg);z+=0.006;
-    p.stroke(t.ink);p.strokeWeight(0.8);p.strokeJoin(p.ROUND);
-    const tops=[t.pal[4],t.pal[0],t.pal[1],t.pal[3],t.pal[2]];
+  p.windowResized=()=>{p.resizeCanvas(size(el),size(el));if(reduce)p.redraw();};
+  const ramp=v=>{const x=Math.max(0,Math.min(0.999,v))*(RAMP.length-1),i=Math.floor(x);
+    return p.lerpColor(p.color(RAMP[i]),p.color(RAMP[i+1]),x-i);};
+  p.draw=()=>{const S=p.width,s=S/(N*2.15),ink=p.color(t.ink);p.background(t.bg);
+    if(!reduce)z+=0.0035;
+    p.strokeJoin(p.ROUND);
     for(let gy=0;gy<N;gy++)for(let gx=0;gx<N;gx++){
-      const hgt=1+Math.floor(p.noise(gx*0.3,gy*0.3,z)*5);
-      const bx=S/2+(gx-gy)*s,by=S*0.36+(gx+gy)*s/2;
-      for(let k=0;k<hgt;k++){const top=p.color(tops[k%tops.length]);
-        cube(bx,by-k*s,s,top,p.lerpColor(top,p.color(t.ink),0.18),p.lerpColor(top,p.color(t.ink),0.34));}}
+      // sampling point slides diagonally over time, so the waves roll toward the viewer
+      const v=p.noise(ox+gx*0.17-z,oy+gy*0.17-z*0.6,z*0.35);
+      const e=Math.max(0,Math.min(1,(v-0.25)/0.5)); // spread noise over the full range
+      const h=(0.35+e*MAXH)*s;
+      const x=S/2+(gx-gy)*s,y=S*0.31+(gx+gy)*s/2-h, top=ramp(e); // columns rise from a fixed ground
+      const left=p.lerpColor(top,ink,0.2),right=p.lerpColor(top,ink,0.38);
+      p.stroke(p.lerpColor(top,ink,0.55));p.strokeWeight(0.7);
+      p.fill(left);p.quad(x-s,y,x,y+s/2,x,y+s/2+h,x-s,y+h);
+      p.fill(right);p.quad(x+s,y,x,y+s/2,x,y+s/2+h,x+s,y+h);
+      p.fill(top);p.quad(x,y-s/2,x+s,y,x,y+s/2,x-s,y);
+      // faint courses on the sides keep the stacked-block feel
+      p.stroke(p.lerpColor(top,ink,0.45));p.strokeWeight(0.4);
+      for(let k=1;k<h/s;k++){const yy=k*s;p.line(x-s,y+yy,x,y+s/2+yy);p.line(x,y+s/2+yy,x+s,y+yy);}
+    }
   };
 };
 
