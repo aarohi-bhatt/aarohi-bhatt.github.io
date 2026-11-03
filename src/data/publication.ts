@@ -29,7 +29,7 @@ export const publicationData: Publication[] = [
       "Kumar T, Patnam NG, Karbhari A, Sitta J, Yadav M, Bhatt A, Kankara SR, Aswani Y, Bhargava R",
     paperUrl: "https://doi.org/10.1148/rg.260091",
     award: "Certificate of Merit, Cum Laude",
-    tldr: "RadioGraphics Fundamentals, Vol. 46, No. 11. Originally an RSNA 2025 educational exhibit (Certificate of Merit, Cum Laude).",
+    tldr: "RadioGraphics Fundamentals, Vol. 46, No. 11. Award from its RSNA 2025 educational exhibit.",
   },
   {
     year: "2025",
