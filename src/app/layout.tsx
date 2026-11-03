@@ -1,28 +1,47 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Noto_Serif, PT_Serif } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { aboutMe } from "@/data/aboutme";
 import { customMetadata } from "@/data/title-description";
-const geistSans = Geist({
+
+// Fonts are self-hosted from @fontsource packages so the build never
+// depends on reaching Google Fonts.
+const geistSans = localFont({
   variable: "--font-geist-sans",
-  subsets: ["latin"],
+  src: [
+    { path: "../../node_modules/@fontsource/geist-sans/files/geist-sans-latin-400-normal.woff2", weight: "400", style: "normal" },
+    { path: "../../node_modules/@fontsource/geist-sans/files/geist-sans-latin-500-normal.woff2", weight: "500", style: "normal" },
+    { path: "../../node_modules/@fontsource/geist-sans/files/geist-sans-latin-600-normal.woff2", weight: "600", style: "normal" },
+    { path: "../../node_modules/@fontsource/geist-sans/files/geist-sans-latin-700-normal.woff2", weight: "700", style: "normal" },
+  ],
 });
 
-const geistMono = Geist_Mono({
+const geistMono = localFont({
   variable: "--font-geist-mono",
-  subsets: ["latin"],
+  src: [
+    { path: "../../node_modules/@fontsource/geist-mono/files/geist-mono-latin-400-normal.woff2", weight: "400", style: "normal" },
+    { path: "../../node_modules/@fontsource/geist-mono/files/geist-mono-latin-500-normal.woff2", weight: "500", style: "normal" },
+  ],
 });
 
-const notoSerif = Noto_Serif({
+const notoSerif = localFont({
   variable: "--font-noto-serif",
-  subsets: ["latin"],
-  weight: ["400", "700"],
+  src: [
+    { path: "../../node_modules/@fontsource/noto-serif/files/noto-serif-latin-400-normal.woff2", weight: "400", style: "normal" },
+    { path: "../../node_modules/@fontsource/noto-serif/files/noto-serif-latin-400-italic.woff2", weight: "400", style: "italic" },
+    { path: "../../node_modules/@fontsource/noto-serif/files/noto-serif-latin-700-normal.woff2", weight: "700", style: "normal" },
+    { path: "../../node_modules/@fontsource/noto-serif/files/noto-serif-latin-700-italic.woff2", weight: "700", style: "italic" },
+  ],
 });
 
-const ptSerif = PT_Serif({
+const ptSerif = localFont({
   variable: "--font-pt-serif",
-  subsets: ["latin"],
-  weight: ["400", "700"],
+  src: [
+    { path: "../../node_modules/@fontsource/pt-serif/files/pt-serif-latin-400-normal.woff2", weight: "400", style: "normal" },
+    { path: "../../node_modules/@fontsource/pt-serif/files/pt-serif-latin-400-italic.woff2", weight: "400", style: "italic" },
+    { path: "../../node_modules/@fontsource/pt-serif/files/pt-serif-latin-700-normal.woff2", weight: "700", style: "normal" },
+    { path: "../../node_modules/@fontsource/pt-serif/files/pt-serif-latin-700-italic.woff2", weight: "700", style: "italic" },
+  ],
 });
 
 export const metadata: Metadata = {
