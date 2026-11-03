@@ -1,121 +1,17 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Art · Aarohi Bhatt</title>
-<meta name="description" content="Art by Aarohi Bhatt, including generative sketches made with p5.js.">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Karla:wght@400;500&family=IBM+Plex+Mono:wght@400&display=swap">
-<style>
-/* Layout: a quiet studio wall, 2x2 grid of square canvases, each with its rule written beneath like a gallery label */
-:root{
-  --bg:#f6f2ef; --card:#fffdfb; --fg:#3a3340; --muted:#7d7383; --line:#e6ddd8; --accent:#b7869e;
-  --p1:#e8664f; --p2:#2a9d8f; --p3:#f0b33c; --p4:#4659b3; --p5:#c8407a; --ink:#5e5468;
-  --display:"Fraunces",Georgia,serif; --body:"Karla",system-ui,sans-serif; --mono:"IBM Plex Mono",ui-monospace,monospace;
-}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --bg:#1f1c22; --card:#28242b; --fg:#ece6ee; --muted:#a69cab; --line:#3a343e; --accent:#d4a7bd;
-  --p1:#ff8466; --p2:#3cc9b8; --p3:#ffc94d; --p4:#7d90f0; --p5:#f0629f; --ink:#ece6ee; color-scheme:dark}}
-:root[data-theme="dark"]{
-  --bg:#1f1c22; --card:#28242b; --fg:#ece6ee; --muted:#a69cab; --line:#3a343e; --accent:#d4a7bd;
-  --p1:#ff8466; --p2:#3cc9b8; --p3:#ffc94d; --p4:#7d90f0; --p5:#f0629f; --ink:#ece6ee; color-scheme:dark}
-body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.55}
-.wrap{max-width:1040px;margin:0 auto;padding-block:48px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-header{display:grid;gap:8px;margin-bottom:36px;max-width:62ch}
-.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
-h1{font-family:var(--display);font-weight:600;font-size:clamp(32px,5vw,48px);line-height:1.1;margin:0;text-wrap:balance}
-header p{margin:0;color:var(--muted)}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:28px}
-figure{margin:0;background:var(--card);border:1px solid var(--line);border-radius:6px;padding:14px;display:grid;gap:14px;min-width:0}
-.canvas{aspect-ratio:1/1;max-width:100%;width:100%;border-radius:3px;overflow:hidden;background:var(--bg);cursor:pointer}
-.canvas canvas{display:block;width:100%!important;height:100%!important}
-figcaption{display:grid;gap:6px;padding:0 4px 4px}
-.row{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap}
-h2{font-family:var(--display);font-weight:400;font-size:24px;margin:0}
-.rule{margin:0;color:var(--muted);font-size:15px}
-.tech{font-family:var(--mono);font-size:12px;color:var(--muted)}
-button{font:500 13px var(--body);color:var(--fg);background:transparent;border:1px solid var(--line);border-radius:999px;padding:6px 14px;cursor:pointer}
-button:hover{border-color:var(--accent);color:var(--accent)}
-button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-.feature{margin-bottom:28px}
-.canvas.wide{aspect-ratio:3/2;background:#16131b}
-@media (max-width:600px){.canvas.wide{aspect-ratio:1/1}}
-.back{font-size:14px;color:var(--muted);text-decoration:none;margin-bottom:8px}.back:hover{color:var(--accent)}
-figure{scroll-margin-top:24px}
-footer{margin-top:40px;color:var(--muted);font-size:14px;max-width:62ch}
-</style>
-<style>body{margin:0}</style>
-</head>
-<body>
-
-
-<div class="wrap">
-  <header>
-    <a class="back" href="/">← Aarohi Bhatt</a>
-    <span class="eyebrow">Generative sketches · p5.js</span>
-    <h1>Art</h1>
-    <p>Generative sketches, each built from one small rule. Tap a canvas or press New seed to grow a fresh version.</p>
-  </header>
-
-  <figure class="feature" id="mirrors">
-    <div class="canvas wide" id="c-light"></div>
-    <figcaption>
-      <div class="row"><h2>Hall of Mirrors</h2><button data-k="light">New chamber</button></div>
-      <p class="rule">A single ray of light leaves a corner and obeys the law of reflection: angle in equals angle out. At each mirror its direction becomes d − 2(d·n)n, where n is the mirror's normal. Its path is traced over hundreds of bounces, shifting color with each one. Every seed builds a new chamber of flat and curved mirrors.</p>
-      <span class="tech">ray–segment and ray–circle intersection · reflection · additive blending</span>
-    </figcaption>
-  </figure>
-
-  <div class="grid">
-    <figure id="rangoli">
-      <div class="canvas" id="c-rangoli"></div>
-      <figcaption>
-        <div class="row"><h2>Rangoli</h2><button data-k="rangoli">New seed</button></div>
-        <p class="rule">One petal is drawn, then copied around the center with 8, 10 or 12-fold rotational symmetry. Rings grow outward one at a time, like chalk laid on a doorstep.</p>
-        <span class="tech">rotate(TWO_PI / n) · bezierVertex · random seed</span>
-      </figcaption>
-    </figure>
-
-
-    <figure id="cubes">
-      <div class="canvas" id="c-cubes"></div>
-      <figcaption>
-        <div class="row"><h2>Cube Field</h2><button data-k="cubes">New seed</button></div>
-        <p class="rule">Isometric cubes stacked on a diamond grid. Stack height comes from slowly moving noise, so the field rises and settles. Each cube is three rhombi with three tones.</p>
-        <span class="tech">isometric projection · painter's order · noise(x, y, t)</span>
-      </figcaption>
-    </figure>
-
-    <figure id="truchet">
-      <div class="canvas" id="c-truchet"></div>
-      <figcaption>
-        <div class="row"><h2>Truchet Weave</h2><button data-k="truchet">New seed</button></div>
-        <p class="rule">Every square holds two quarter circles in one of two orientations. Random flips join them into long winding threads. A few tiles turn every moment, so the paths keep rerouting.</p>
-        <span class="tech">arc · random(1) &lt; 0.5 · eased rotation</span>
-      </figcaption>
-    </figure>
-  </div>
-
-  <footer>Each sketch is plain p5.js in instance mode, with the geometry and physics written by hand. Tap any canvas to grow a new version.</footer>
-</div>
-
-<script src="p5.min.js"></script>
-<script>
+/* Generative sketches for aarohi-bhatt.github.io/art (p5.js, instance mode).
+   Exposes window.ArtSketches.mount(element, key) -> p5 instance.
+   Each instance has reseed() to grow a new version. */
+(function(){
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-function tok(){const s=getComputedStyle(document.documentElement);const g=n=>s.getPropertyValue(n).trim();
-  return {bg:g('--bg'),ink:g('--ink'),line:g('--line'),pal:[g('--p1'),g('--p2'),g('--p3'),g('--p4'),g('--p5')]};}
-const sketches={};
-function mount(id,key,fn){
-  const el=document.getElementById(id);
-  sketches[key]=new p5(p=>{fn(p,el);},el);
-  el.addEventListener('click',()=>sketches[key].reseed());
-}
-document.querySelectorAll('button[data-k]').forEach(b=>b.addEventListener('click',()=>sketches[b.dataset.k].reseed()));
+// Colors match the site: cream ground, zinc ink, a bold accent palette.
+const THEME={bg:'#F4EFE8',ink:'#3f3f46',pal:['#e8664f','#2a9d8f','#f0b33c','#4659b3','#c8407a']};
+const tok=()=>THEME;
 const size=el=>Math.max(200,Math.round(el.clientWidth));
+const SKETCHES={};
 
 /* 0. Hall of Mirrors: one light ray, many reflections */
-mount('c-light','light',(p,el)=>{
-  const BG='#16131b',LIGHT=['#ff5e57','#ffa62b','#5fe07a','#2fc4ff','#a66bff','#ff4fa0'];
+SKETCHES.mirrors=(p,el)=>{
+  const BG=THEME.bg,LIGHT=['#e8664f','#e0a020','#2a9d8f','#3a7bd5','#7d4fc4','#c8407a'];
   let W,H,S,cx,cy,segs=[],circs=[],path=[],lens=[],total=0,drawn=0,buf,layout=0;
   const dims=()=>[Math.max(240,Math.round(el.clientWidth)),Math.max(200,Math.round(el.clientHeight))];
   const P=(x,y)=>({x:cx+x*S,y:cy+y*S});
@@ -156,36 +52,35 @@ mount('c-light','light',(p,el)=>{
       lens.push(h.t);total+=h.t;path.push(q);o=q;}}
   p.reseed=()=>{[W,H]=dims();if(p.width!==W||p.height!==H)p.resizeCanvas(W,H);
     layout=(layout+1+Math.floor(p.random(2)))%3;build();trace();
-    if(buf)buf.remove();buf=p.createGraphics(W,H);buf.pixelDensity(2);buf.background(BG);buf.blendMode(p.ADD);buf.strokeCap(p.SQUARE);
+    if(buf)buf.remove();buf=p.createGraphics(W,H);buf.pixelDensity(2);buf.background(BG);buf.strokeCap(p.SQUARE);
     drawn=reduce?total:0;p.loop();};
   p.setup=()=>{[W,H]=dims();p.createCanvas(W,H);p.pixelDensity(2);layout=Math.floor(p.random(3));p.reseed();};
-  p.windowResized=()=>p.reseed();
+  p.windowResized=()=>{const [w,h]=dims();if(w!==W||h!==H)p.reseed();};
   function strokeTo(from,to){ // draw path between arc-lengths from..to onto the buffer
     let acc=0;for(let i=0;i<lens.length;i++){const L=lens[i],s0=acc,s1=acc+L;acc=s1;
       if(s1<from||s0>to)continue;const a=path[i],b=path[i+1];
       const u0=Math.max(0,(from-s0)/L),u1=Math.min(1,(to-s0)/L);
       const x0=a.x+(b.x-a.x)*u0,y0=a.y+(b.y-a.y)*u0,x1=a.x+(b.x-a.x)*u1,y1=a.y+(b.y-a.y)*u1;
       const k=i/6,c=p.lerpColor(p.color(LIGHT[Math.floor(k)%6]),p.color(LIGHT[(Math.floor(k)+1)%6]),k%1);
-      c.setAlpha(26);buf.stroke(c);buf.strokeWeight(5);buf.line(x0,y0,x1,y1);
-      c.setAlpha(150);buf.stroke(c);buf.strokeWeight(1);buf.line(x0,y0,x1,y1);}}
+      c.setAlpha(150);buf.stroke(c);buf.strokeWeight(1.2);buf.line(x0,y0,x1,y1);}}
   p.draw=()=>{const step=Math.max(total/1100,S*0.02);const prev=drawn;
     if(!reduce)drawn=Math.min(total,drawn+step);
     strokeTo(reduce?0:prev,drawn);
     p.image(buf,0,0);
     // mirrors
-    p.stroke(230,226,240,170);p.strokeWeight(2);p.strokeCap(p.ROUND);
+    p.stroke(63,63,70,200);p.strokeWeight(2);p.strokeCap(p.ROUND);
     for(const[a,b]of segs.slice(4))p.line(a.x,a.y,b.x,b.y);
     p.noFill();for(const c of circs)p.circle(c.x,c.y,c.r*2);
-    p.stroke(230,226,240,60);p.strokeWeight(1);p.rect(6,6,W-12,H-12);
+    p.noFill();p.stroke(63,63,70,60);p.strokeWeight(1);p.rect(6,6,W-12,H-12);
     // the photon
     if(drawn<total){let acc=0,hx=path[0].x,hy=path[0].y;
       for(let i=0;i<lens.length;i++){if(acc+lens[i]>=drawn){const u=(drawn-acc)/lens[i];hx=path[i].x+(path[i+1].x-path[i].x)*u;hy=path[i].y+(path[i+1].y-path[i].y)*u;break;}acc+=lens[i];}
-      p.noStroke();p.fill(255,250,235,60);p.circle(hx,hy,16);p.fill(255,252,240);p.circle(hx,hy,5);}
+      p.noStroke();p.fill(24,24,27,40);p.circle(hx,hy,14);p.fill(24,24,27);p.circle(hx,hy,5);}
     else p.noLoop();};
-});
+};
 
 /* 1. Rangoli */
-mount('c-rangoli','rangoli',(p,el)=>{
+SKETCHES.rangoli=(p,el)=>{
   let rings=[],shown=0,t;
   p.reseed=()=>{t=tok();p.randomSeed(Date.now());rings=[];
     const n=p.random([8,10,12]);let r=0.06;
@@ -208,10 +103,10 @@ mount('c-rangoli','rangoli',(p,el)=>{
       p.noFill();p.stroke(t.ink);p.strokeWeight(.6);p.circle(0,0,r0*2);});
     p.noStroke();p.fill(t.pal[3]);p.circle(0,0,S*0.07);p.fill(t.ink);p.circle(0,0,S*0.015);
     if(shown>=rings.length)p.noLoop();};
-});
+};
 
 /* 3. Cube Field */
-mount('c-cubes','cubes',(p,el)=>{
+SKETCHES.cubes=(p,el)=>{
   let t,z=0;
   p.reseed=()=>{t=tok();p.noiseSeed(Math.floor(p.random(1e6)));if(reduce)p.redraw();};
   p.setup=()=>{p.createCanvas(size(el),size(el));p.pixelDensity(2);p.reseed();if(reduce)p.noLoop();};
@@ -229,10 +124,10 @@ mount('c-cubes','cubes',(p,el)=>{
       for(let k=0;k<hgt;k++){const top=p.color(tops[k%tops.length]);
         cube(bx,by-k*s,s,top,p.lerpColor(top,p.color(t.ink),0.18),p.lerpColor(top,p.color(t.ink),0.34));}}
   };
-});
+};
 
 /* 4. Truchet Weave */
-mount('c-truchet','truchet',(p,el)=>{
+SKETCHES.truchet=(p,el)=>{
   let t,g=[],N=10;
   p.reseed=()=>{t=tok();N=p.random([8,10,12]);g=[];
     for(let i=0;i<N*N;i++){const o=p.random()<.5?0:1;g.push({o,a:o,c:p.random(t.pal)});}
@@ -251,10 +146,8 @@ mount('c-truchet','truchet',(p,el)=>{
       for(const r of[w*0.72,w*1.28]){p.arc(-w/2,-w/2,r,r,0,p.HALF_PI);p.arc(w/2,w/2,r,r,p.PI,p.PI+p.HALF_PI);}
       p.pop();});
   };
-});
+};
 
-matchMedia('(prefers-color-scheme: dark)').addEventListener('change',()=>Object.values(sketches).forEach(s=>s.recolor?s.recolor():s.reseed()));
-</script>
 
-</body>
-</html>
+window.ArtSketches={mount:(el,key)=>new p5(p=>SKETCHES[key](p,el),el)};
+})();
