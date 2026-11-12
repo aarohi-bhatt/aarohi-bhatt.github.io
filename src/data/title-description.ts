@@ -4,7 +4,7 @@ export interface CustomMetadata {
 }
 
 export const customMetadata: CustomMetadata = {
-  title: "Aarohi Bhatt",
+  title: "Aarohi Bhatt | Columbia CS, AI for Medicine",
   description:
-    "Aarohi Bhatt is a physician-researcher building toward trustworthy multimodal AI for medicine.",
+    "Aarohi Bhatt is an MBBS-trained physician and MS Computer Science student at Columbia University, formerly a radiology research fellow at the University of Washington, building toward trustworthy multimodal AI for medicine.",
 };

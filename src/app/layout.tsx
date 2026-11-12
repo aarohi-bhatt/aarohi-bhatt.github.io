@@ -44,9 +44,41 @@ const ptSerif = localFont({
   ],
 });
 
+const siteUrl = "https://aarohi-bhatt.github.io";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: customMetadata.title || aboutMe.name,
   description: customMetadata.description || aboutMe.description,
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "profile",
+    url: siteUrl,
+    siteName: aboutMe.name,
+    title: customMetadata.title || aboutMe.name,
+    description: customMetadata.description,
+    images: aboutMe.imageUrl ? [aboutMe.imageUrl] : undefined,
+  },
+};
+
+// Structured data so Google can connect this site to the same person's other profiles.
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: aboutMe.name,
+  url: siteUrl,
+  image: aboutMe.imageUrl ? `${siteUrl}${aboutMe.imageUrl}` : undefined,
+  jobTitle: "MS Computer Science student",
+  affiliation: { "@type": "CollegeOrUniversity", name: "Columbia University" },
+  alumniOf: [
+    { "@type": "CollegeOrUniversity", name: "Gujarat University" },
+    { "@type": "CollegeOrUniversity", name: "University of Washington" },
+  ],
+  sameAs: [
+    aboutMe.linkedinUsername && `https://www.linkedin.com/in/${aboutMe.linkedinUsername}`,
+    aboutMe.githubUsername && `https://github.com/${aboutMe.githubUsername}`,
+    aboutMe.twitterUsername && `https://x.com/${aboutMe.twitterUsername}`,
+  ].filter(Boolean),
 };
 
 export default function RootLayout({
@@ -56,6 +88,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${notoSerif.variable} ${ptSerif.variable} antialiased`}
       >
