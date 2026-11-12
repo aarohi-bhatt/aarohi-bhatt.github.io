@@ -22,7 +22,7 @@ export const aboutMe: AboutMe = {
   title: "MBBS-trained physician",
   institution: "MSCS Bridge @ Columbia University",
   description:
-    "I am an MBBS-trained physician from India and a former Postdoctoral Scholar in Radiology at the University of Washington. I am pursuing the MSCS Bridge @ Columbia University, building toward research in trustworthy multimodal AI for medicine.<br/><br/>My transition from medicine to computer science grew out of seeing how often clinical decisions depend on incomplete information, uneven documentation, and human vigilance. I want to build AI systems that function as reliable clinical safety nets: technically rigorous, interpretable, and designed for messy real-world care.",
+    "Hi, I'm Aarohi. I'm a physician (MBBS) and an MS Computer Science student at Columbia University. I recently joined Prof. Kaveri Thakoor's AI4VS Lab, where I'm contributing to research on detecting systemic diseases from eye imaging.<br/><br/>I'm fascinated by biology as a set of naturally occurring causal systems, from cellular signaling to whole-body physiology, and I want to understand them from the bottom up. That means combining mechanistic models with causal structure learned from data, and building high-fidelity simulations of biology where hypotheses can be tested faster than clinical trials allow. My long-term goal is to catch disease at the right time and design better interventions.<br/><br/>Before Columbia, I was a postdoctoral scholar in radiology at the University of Washington with Dr. Dushyant Sahani, working on CT body composition in liver and pancreatic disease. I trained in medicine at Gujarat University and practiced as a physician in India.",
   email: "akb2248 [at] columbia [dot] edu",
   imageUrl: "/images/profile.jpg",
   githubUsername: "aarohi-bhatt",
@@ -30,5 +30,5 @@ export const aboutMe: AboutMe = {
   linkedinUsername: "aarohi-bhatt",
   institutionUrl: "https://www.engineering.columbia.edu/",
   funDescription:
-    "Interested in multimodal medical AI, human-centered diagnostic systems, and robust learning from incomplete clinical data.",
+    "Interested in causal biological systems, simulating biology, and catching disease at the right time.",
 };

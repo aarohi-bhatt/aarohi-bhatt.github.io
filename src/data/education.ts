@@ -14,7 +14,7 @@ export const educationData: Education[] = [
     institution: "Columbia University, Fu Foundation School of Engineering and Applied Science",
     degree: "MSCS Bridge @ Columbia University",
     coursework:
-      "Summer 2026: COMS W1004 (Intro to Programming in Java), COMS W3134 (Data Structures in Java), COMS W3203 (Discrete Mathematics), MATH UN1201 (Calculus III). Fall 2026: COMS W3157 (Advanced Programming), MATH UN2015 (Linear Algebra & Probability); waitlisted: COMS W4705 (Natural Language Processing), COMS W4771 (Machine Learning)",
+      "Summer 2026: COMS W1004 (Intro to Programming in Java), COMS W3134 (Data Structures in Java), COMS W3203 (Discrete Mathematics), MATH UN1201 (Calculus III). Fall 2026: COMS W4771 (Machine Learning), COMS W3157 (Advanced Programming), MATH UN2015 (Linear Algebra & Probability)",
   },
   {
     year: "2017-2023",

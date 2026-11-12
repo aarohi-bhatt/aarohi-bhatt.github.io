@@ -10,6 +10,14 @@ export interface Experience {
 
 export const experienceData: Experience[] = [
   {
+    date: "Oct 2026 - Present",
+    title: "Graduate Student Researcher",
+    company: "Columbia University, AI4VS Lab",
+    description:
+      "Contributing clinical expertise to a study on early detection of pancreatic cancer from eye imaging (fundus, OCT, OCTA), linked to body composition and new-onset diabetes. Helped refine and build the study design for a grant submission.",
+    advisor: "Prof. Kaveri Thakoor",
+  },
+  {
     date: "Nov 2024 - May 2026",
     title: "Postdoctoral Scholar",
     company: "University of Washington, Department of Radiology",

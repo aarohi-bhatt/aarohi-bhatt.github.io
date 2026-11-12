@@ -9,27 +9,27 @@ export interface Portfolio {
 
 export const portfolioData: Portfolio[] = [
   {
-    title: "Multimodal medical AI",
+    title: "Causal biological systems",
     description:
-      "Models that connect imaging, reports, structured clinical data, pathology, genomics, and outcomes.",
-    technologies: ["imaging", "text", "EHR", "outcomes"],
+      "Mechanistic and data-driven causal models of how local signals become body-wide responses.",
+    technologies: ["causality", "mechanistic models", "systems biology"],
   },
   {
-    title: "Human-centered diagnostic AI",
+    title: "Simulating biology",
     description:
-      "Systems built around clinicians, patients, ambiguity, uncertainty, and accountable care.",
-    technologies: ["clinical reasoning", "interpretability", "workflow"],
+      "High-fidelity simulations of cellular, immune, tissue, and whole-body environments for testing hypotheses and interventions.",
+    technologies: ["simulation", "immunology", "physiology"],
   },
   {
-    title: "Radiology vision + clinical reasoning",
+    title: "Early disease detection",
     description:
-      "Image representations that stay close to anatomy, disease, reports, and interpretive logic.",
-    technologies: ["radiology", "computer vision", "reports"],
+      "Catching aggressive cancers and other diseases early from rich patient data.",
+    technologies: ["cancer", "early detection", "clinical data"],
   },
   {
-    title: "Longitudinal, causal, missingness-aware ML",
+    title: "Clinically grounded AI",
     description:
-      "Methods for patient trajectories where absent data may reflect access, selection, documentation, or inequity.",
-    technologies: ["causality", "missingness", "longitudinal data"],
+      "Models shaped by a physician's view of decision-making and diagnostic error.",
+    technologies: ["clinical reasoning", "decision support", "diagnostic error"],
   },
 ];
